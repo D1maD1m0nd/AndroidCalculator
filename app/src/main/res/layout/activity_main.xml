@@ -4,15 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F50057"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle">
+
+        <EditText
+            android:id="@+id/editTextSecondName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/aclonica"
+            android:inputType="textPersonName"
+            android:text="Second name"
+            android:textColor="#17FF49" />
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/aclonica"
+            android:inputType="textPersonName"
+            android:text="First name"
+            android:textColor="#17FF49" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#5E00B0FF"
+            android:fontFamily="@font/alfa_slab_one"
+            android:shadowColor="#4C2A2A"
+            android:text="Accept" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageHeart"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="48dp"
+            app:srcCompat="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/anton"
+            android:text="First application"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageHeart1"
+            android:layout_width="64dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="28dp"
+            app:srcCompat="@drawable/heart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="325dp"
+        android:layout_height="87dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Switch
+            android:id="@+id/switchOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON"
+            android:textColor="#29305A" />
+
+        <ToggleButton
+            android:id="@+id/toggleOnOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#59FFFFFF"
+            android:text="ToggleButton"
+            android:textOff="Block"
+            android:textOn="Unblock" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
