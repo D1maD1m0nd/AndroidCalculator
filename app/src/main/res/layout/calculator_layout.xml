@@ -27,6 +27,7 @@
             android:textSize="30dp" />
 
         <EditText
+
             android:id="@+id/editTextExpresion"
             android:layout_width="match_parent"
             android:layout_height="150dp"
