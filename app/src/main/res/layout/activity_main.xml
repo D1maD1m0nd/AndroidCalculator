@@ -54,12 +54,10 @@
         android:id="@+id/linearLayoutTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteY="-1dp">
 
         <ImageView
             android:id="@+id/imageHeart"
@@ -72,8 +70,9 @@
             android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ems="1"
             android:fontFamily="@font/anton"
-            android:text="First application"
+            android:text="M"
             android:textColor="@color/white"
             android:textSize="24sp"
             tools:ignore="MissingConstraints" />
