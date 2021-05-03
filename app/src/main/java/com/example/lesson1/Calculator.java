@@ -22,6 +22,11 @@ public class Calculator implements ICalculator, Serializable {
         EXP = new StringBuilder();
     }
 
+    /**
+     * Метод добавления значения к выражению, добавляет переданный символ
+     * проверяет его число он или операция. далее производит подсчет через метод calc
+     * @param i - переданный символ
+     */
     @Override
     public void add(String i) {
         boolean isSymbol = i.matches(REGEX_IS_SYMBOL_OPERATION);
@@ -94,6 +99,12 @@ public class Calculator implements ICalculator, Serializable {
         EXP.setLength(0);
     }
 
+    /**
+     * Класс производит расчет значений двух переданных операндов, по операции
+     * @param operation - операция, которую необходимо произвести, сравнивается с константами
+     * @param operand1 - первый операнд
+     * @param operand2 - второй операнд
+     */
     private void calculate(String operation, double operand1, double operand2){
         switch (operation){
             case PLUS:
@@ -114,6 +125,12 @@ public class Calculator implements ICalculator, Serializable {
                 break;
         }
     }
+
+    /**
+     * Метод расчета
+     * В данном методе назодятся основные проверки
+     * Пользовательского ввода, далее производится расчет по введенным данным
+     */
     private void calculate() {
         String textEXP = EXP.toString();
         //состоит ли строка только из цифр

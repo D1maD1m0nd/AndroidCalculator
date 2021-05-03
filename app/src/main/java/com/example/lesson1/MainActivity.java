@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //init calculator
         calculator = new Calculator();
     }
+
+    /**
+     * метод инициализации слушателей клика для кнопок
+     */
     private void initClickListenerButton(){
         //values
         findViewById(R.id.buttonOne).setOnClickListener(this);
@@ -73,6 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         result.setText(calculator.getResult());
         userInput.setText(calculator.getEXP());
     }
+
+    /**
+     * очищает поля у текст вью
+     * и очищает стэйт у объекта калькулятора
+     */
     private void clearState(){
         calculator.clear();
         userInput.setText(calculator.getResult());
