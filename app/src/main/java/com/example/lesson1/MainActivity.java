@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Locale;
 
 import static com.example.lesson1.CalculatorConstants.CLEAR;
 import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
