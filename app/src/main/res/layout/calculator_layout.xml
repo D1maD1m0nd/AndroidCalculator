@@ -10,7 +10,8 @@
         <TextView
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_margin="4dp"
             android:background="@color/teal_700"
             android:backgroundTint="#E8FFFFFF"
@@ -20,7 +21,8 @@
     <TextView
         android:id="@+id/textViewInput"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_margin="4dp"
         android:background="@color/teal_700"
         android:backgroundTint="#E8FFFFFF"
@@ -31,7 +33,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:layout_weight="1"
             android:backgroundTint="#C6FF00"
@@ -92,14 +94,14 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/button_label_plus"
-                android:textColor="#3D5AFE"
+                android:textColor="#F50057"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -156,14 +158,14 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/button_label_x"
-                android:textColor="#3D5AFE"
+                android:textColor="#F50057"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -220,14 +222,14 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/button_label_div"
-                android:textColor="#3D5AFE"
+                android:textColor="#F50057"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -246,6 +248,20 @@
                 android:textSize="20sp" />
 
             <Button
+                android:id="@+id/Clear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:layout_weight="1.76"
+                android:backgroundTint="#E8FFFFFF"
+                android:fontFamily="@font/alfa_slab_one"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/clear"
+                android:textColor="#F50057"
+                android:textSize="20sp" />
+
+            <Button
                 android:id="@+id/buttonMinus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -256,7 +272,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/button_label_minus"
-                android:textColor="#3D5AFE"
+                android:textColor="#F50057"
                 android:textSize="20sp" />
 
             <Button
@@ -270,7 +286,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/button_label_equals"
-                android:textColor="#3D5AFE"
+                android:textColor="#F50057"
                 android:textSize="20sp" />
         </LinearLayout>
 </LinearLayout>

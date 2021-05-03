@@ -17,4 +17,5 @@
     <string name="button_label_equals">=</string>
     <string name="button_label_minus">-</string>
     <string name="button_label_0">0</string>
+    <string name="clear">c</string>
 </resources>
