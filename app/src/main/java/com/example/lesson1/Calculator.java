@@ -108,17 +108,17 @@ public class Calculator implements ICalculator, Serializable {
     private void calculate(String operation, double operand1, double operand2){
         switch (operation){
             case PLUS:
-                result = String.valueOf(plus(operand1,operand2));
+                result = String.format("%.2f",plus(operand1,operand2));
                 break;
             case MINUS:
-                result = String.valueOf(minus(operand1,operand2));
+                result = String.format("%.2f",minus(operand1,operand2));
                 break;
             case DIVIDE:
                 double tmp = divide(operand1, operand2);
-                result = tmp == -1 ? DIVIDE_ZERO: String.valueOf(tmp);
+                result = tmp == -1 ? DIVIDE_ZERO: String.format("%.2f", tmp);
                 break;
             case MULTIPLY:
-                result = String.valueOf(divide(operand1,operand2));
+                result = String.format("%.2f",multiply(operand1,operand2));
                 break;
             case EQUAL:
                 calculate(operation, operand1, operand2);
@@ -133,12 +133,15 @@ public class Calculator implements ICalculator, Serializable {
      */
     private void calculate() {
         String textEXP = EXP.toString();
+
+        boolean isSymbol = textEXP.matches(REGEX_IS_SYMBOL_OPERATION);
+        boolean isNumber = textEXP.matches(REGEX_IS_NUMBER);
         //состоит ли строка только из цифр
-        if (textEXP.matches(REGEX_IS_NUMBER)) {
+        if (isNumber) {
             result = textEXP;
         }
         //состоит ли строка только из символов операций
-        else if (textEXP.matches(REGEX_IS_SYMBOL_OPERATION)) {
+        else if (isSymbol) {
             result = INPUT_NUMBER;
         } else {
             String[] partsEXPArray = textEXP.split("[" + operation + "]");
@@ -150,6 +153,7 @@ public class Calculator implements ICalculator, Serializable {
                 double operand2 = Double.parseDouble(partsEXPArray[1]);
                 //расчитываем результат выражения
                 calculate(operation, operand1, operand2);
+
 //              //очищаем ткущее выражение
                 EXP.setLength(0);
                 //добавляем результат предудщего
