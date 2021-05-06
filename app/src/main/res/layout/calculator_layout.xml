@@ -181,7 +181,8 @@
                 android:insetBottom="0dp"
                 android:text="@string/button_label_7"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonEight"
@@ -195,7 +196,8 @@
                 android:insetBottom="0dp"
                 android:text="@string/button_label_8"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonNine"
@@ -209,7 +211,8 @@
                 android:insetBottom="0dp"
                 android:text="@string/button_label_9"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonDivide"
