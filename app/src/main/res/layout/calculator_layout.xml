@@ -12,23 +12,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="4dp"
+            android:layout_margin="@dimen/layout_margin"
             android:background="@color/teal_700"
             android:backgroundTint="#E8FFFFFF"
             android:text="@string/result"
             android:textColor="#3D5AFE"
-            android:textSize="30sp" />
+            android:textSize="@dimen/text_size_text_view" />
     <TextView
         android:id="@+id/textViewInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_margin="4dp"
+        android:layout_margin="@dimen/layout_margin"
         android:background="@color/teal_700"
         android:backgroundTint="#E8FFFFFF"
         android:text="@string/user_input_label"
         android:textColor="#3D5AFE"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_size_text_view" />
 
 
         <LinearLayout
@@ -44,58 +44,58 @@
                 android:id="@+id/buttonOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
                 android:hapticFeedbackEnabled="false"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_1"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_2"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_3"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonPlus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+                android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_plus"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,57 +109,57 @@
                 android:id="@+id/buttonFour"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_4"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonFive"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+                android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_5"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonSix"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+                android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_6"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonMulti"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_x"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
         </LinearLayout>
 
         <LinearLayout
@@ -173,60 +173,60 @@
                 android:id="@+id/buttonSeven"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_7"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonEight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_8"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonNine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_9"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/buttonDivide"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_div"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
         </LinearLayout>
 
         <LinearLayout
@@ -240,56 +240,56 @@
                 android:id="@+id/buttonZero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1.15"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_0"
                 android:textColor="#3D5AFE"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/Clear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1.76"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/clear"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonMinus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1.76"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_minus"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
 
             <Button
                 android:id="@+id/buttonEqual"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:layout_weight="1.76"
                 android:backgroundTint="#E8FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+         android:insetTop="@dimen/inset_none"
+                android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_equals"
                 android:textColor="#F50057"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_button" />
         </LinearLayout>
 </LinearLayout>
