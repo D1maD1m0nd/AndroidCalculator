@@ -1,6 +1,7 @@
 package com.example.lesson1;
 
 import java.io.Serializable;
+import java.util.Locale;
 
 import static com.example.lesson1.CalculatorConstants.DIVIDE;
 import static com.example.lesson1.CalculatorConstants.DIVIDE_ZERO;
@@ -108,17 +109,17 @@ public class Calculator implements ICalculator, Serializable {
     private void calculate(String operation, double operand1, double operand2){
         switch (operation){
             case PLUS:
-                result = String.format("%.2f",plus(operand1,operand2));
+                result = String.format(Locale.getDefault(),"%.2f",plus(operand1,operand2));
                 break;
             case MINUS:
-                result = String.format("%.2f",minus(operand1,operand2));
+                result = String.format(Locale.getDefault(),"%.2f",minus(operand1,operand2));
                 break;
             case DIVIDE:
                 double tmp = divide(operand1, operand2);
-                result = tmp == -1 ? DIVIDE_ZERO: String.format("%.2f", tmp);
+                result = tmp == -1 ? DIVIDE_ZERO: String.format(Locale.getDefault(),"%.2f", tmp);
                 break;
             case MULTIPLY:
-                result = String.format("%.2f",multiply(operand1,operand2));
+                result = String.format(Locale.getDefault(),"%.2f",multiply(operand1,operand2));
                 break;
             case EQUAL:
                 calculate(operation, operand1, operand2);
@@ -149,8 +150,8 @@ public class Calculator implements ICalculator, Serializable {
             if (partsEXPArray.length == 1) {
                 result = partsEXPArray[0];
             } else {
-                double operand1 = Double.parseDouble(partsEXPArray[0]);
-                double operand2 = Double.parseDouble(partsEXPArray[1]);
+                double operand1 = Double.parseDouble(partsEXPArray[0].replace(',','.'));
+                double operand2 = Double.parseDouble(partsEXPArray[1].replace(',','.'));
                 //расчитываем результат выражения
                 calculate(operation, operand1, operand2);
 
