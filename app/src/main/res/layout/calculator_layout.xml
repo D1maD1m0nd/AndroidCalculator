@@ -40,7 +40,7 @@
             android:backgroundTintMode="src_over"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -49,13 +49,13 @@
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
                 android:hapticFeedbackEnabled="false"
-         android:insetTop="@dimen/inset_none"
+                android:insetTop="@dimen/inset_none"
                 android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_1"
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -63,13 +63,13 @@
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-         android:insetTop="@dimen/inset_none"
+                android:insetTop="@dimen/inset_none"
                 android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_2"
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,13 +77,13 @@
                 android:layout_weight="1"
                 android:backgroundTint="#B7FFFFFF"
                 android:fontFamily="@font/alfa_slab_one"
-         android:insetTop="@dimen/inset_none"
+                android:insetTop="@dimen/inset_none"
                 android:insetBottom="@dimen/inset_none"
                 android:text="@string/button_label_3"
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -105,7 +105,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonFour"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -119,7 +119,7 @@
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonFive"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -133,7 +133,7 @@
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSix"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -147,7 +147,7 @@
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMulti"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -169,7 +169,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSeven"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -184,7 +184,7 @@
                 android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -199,7 +199,7 @@
                 android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonNine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -214,7 +214,7 @@
                 android:textSize="@dimen/text_size_button"
                 style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDivide"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -236,7 +236,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonZero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -250,7 +250,7 @@
                 android:textColor="#3D5AFE"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/Clear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -264,7 +264,7 @@
                 android:textColor="#F50057"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -278,7 +278,7 @@
                 android:textColor="#F50057"
                 android:textSize="@dimen/text_size_button" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonEqual"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
