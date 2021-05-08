@@ -5,4 +5,5 @@
     <dimen name="text_size_button">20sp</dimen>
     <dimen name="inset_none">0dp</dimen>
     <dimen name="padding_start_text_view">5dp</dimen>
+    <dimen name="weight_operation_last_row">1.76</dimen>
 </resources>
