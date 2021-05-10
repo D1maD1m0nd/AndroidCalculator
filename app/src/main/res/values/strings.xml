@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Lesson1</string>
+    <string name="result">Результат</string>
+    <string name="user_input_label">Введите выражение</string>
+    <string name="button_label_1">1</string>
+    <string name="button_label_2">2</string>
+    <string name="button_label_3">3</string>
+    <string name="button_label_plus">+</string>
+    <string name="button_label_4">4</string>
+    <string name="button_label_5">5</string>
+    <string name="button_label_6">6</string>
+    <string name="button_label_x">x</string>
+    <string name="button_label_7">7</string>
+    <string name="button_label_8">8</string>
+    <string name="button_label_9">9</string>
+    <string name="button_label_div">%</string>
+    <string name="button_label_equals">=</string>
+    <string name="button_label_minus">-</string>
+    <string name="button_label_0">0</string>
+    <string name="clear">c</string>
 </resources>
