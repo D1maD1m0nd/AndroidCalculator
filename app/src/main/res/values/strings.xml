@@ -22,4 +22,6 @@
     <string name="dark_theme">Темная тема</string>
     <string name="extra_light">Экстра светлая тема</string>
     <string name="blood_theme">Кровавая тема</string>
+    <string name="continue_button">Продолжить</string>
+    <string name="choice_theme">Выберите тему</string>
 </resources>

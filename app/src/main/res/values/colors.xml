@@ -14,4 +14,6 @@
     <color name ="absolute_white">#FFFFFFFF</color>
     <color name="grey_ab7">#7EBAB7B7</color>
     <color name="button_night">#99000000</color>
+    <color name="blood">#F50000</color>
+    <color name="green">#9969F14A</color>
 </resources>

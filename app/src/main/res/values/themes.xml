@@ -1,6 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="MainContainer" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.GreenTheme" parent="Theme.MaterialComponents">
+        <item name="backgroundColor">@color/black_0c0</item>
+        <item name="background">@color/black_0c0</item>
+        <item name="materialButtonStyle">@style/ButtonStyleGreen</item>
+    </style>
+
+    <style name="Theme.DarkerTheme" parent="Theme.MaterialComponents">
+        <item name="backgroundColor">@color/black_0c0</item>
+        <item name="background">@color/black_0c0</item>
+        <item name="materialButtonStyle">@style/ButtonStyleNight</item>
+    </style>
+
+    <style name="Theme.BloodTheme" parent="Theme.MaterialComponents">
+        <item name="background">@color/black_0c0</item>
+        <item name="materialButtonStyle">@style/ButtonStyleBlood</item>
+    </style>
+
+    <style name="Theme.MainContainer" parent="Theme.MaterialComponents">
         <item name="backgroundColor">@color/absolute_white</item>
         <item name="background">@color/absolute_white</item>
         <item name="materialButtonStyle">@style/ButtonStyleLight</item>

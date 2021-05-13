@@ -1,105 +1,102 @@
 package com.example.lesson1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.RadioButton;
 
 
-import static com.example.lesson1.CalculatorConstants.CLEAR;
-import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
+public class MainActivity extends AppCompatActivity{
+    // Имя настроек
+    private static final String NameSharedPreference = "STYLE";
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    // Имя параметра в настройках
+    private static final String appTheme = "APP_THEME";
 
-    private Calculator calculator;
-    private TextView result;
-    private TextView userInput;
-    private static final String STATE_CALCULATOR = "STATE_CALCULATOR";
+
+
+    private static final int BLOOD = 0;
+    private static final int EXTRA_WHITE = 1;
+    private static final int DARKER = 2;
+    private static final int GREEN = 3;
+
+
+
+
+    private RadioButton bloodButton ;
+    private RadioButton extraButton;
+    private RadioButton darkerButton;
+    private RadioButton greenButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculator_layout);
-
-        //init TextView
-        result = findViewById(R.id.textViewResult);
-        userInput = findViewById(R.id.textViewInput);
-
-        //binding onClickListner on button
-        initClickListenerButton();
-
-        //init calculator
-        calculator = new Calculator();
+        int themeId = getAppTheme(R.style.MainContainer);
+        setTheme(themeId);
+        setContentView(R.layout.main_activity);
+        initView();
+        bindingOnClickButton();
     }
-
-    /**
-     * метод инициализации слушателей клика для кнопок
-     */
-    private void initClickListenerButton(){
-        //values
-        findViewById(R.id.buttonOne).setOnClickListener(this);
-        findViewById(R.id.buttonTwo).setOnClickListener(this);
-        findViewById(R.id.buttonThree).setOnClickListener(this);
-        findViewById(R.id.buttonFour).setOnClickListener(this);
-        findViewById(R.id.buttonFive).setOnClickListener(this);
-        findViewById(R.id.buttonSix).setOnClickListener(this);
-        findViewById(R.id.buttonSeven).setOnClickListener(this);
-        findViewById(R.id.buttonEight).setOnClickListener(this);
-        findViewById(R.id.buttonNine).setOnClickListener(this);
-        findViewById(R.id.buttonZero).setOnClickListener(this);
-
-        //actions
-        findViewById(R.id.buttonPlus).setOnClickListener(this);
-        findViewById(R.id.buttonMinus).setOnClickListener(this);
-        findViewById(R.id.buttonEqual).setOnClickListener(this);
-        findViewById(R.id.buttonDivide).setOnClickListener(this);
-        findViewById(R.id.buttonMulti).setOnClickListener(this);
-        findViewById(R.id.Clear).setOnClickListener(this);
+    private void initView(){
+        bloodButton = findViewById(R.id.bloodThemeButton);
+        extraButton = findViewById(R.id.extraWhiteButton);
+        darkerButton = findViewById(R.id.darkerThemeButton);
+        greenButton = findViewById(R.id.greenThemeButton);
+    }
+    private void bindingOnClickButton(){
+        bloodButton.setOnClickListener(v -> {
+            setAppTheme(BLOOD);
+            recreate();
+        });
+        extraButton.setOnClickListener(v -> {
+            setAppTheme(EXTRA_WHITE);
+            recreate();
+        } );
+        darkerButton.setOnClickListener(v -> {
+            setAppTheme(DARKER);
+            recreate();
+        });
+        greenButton.setOnClickListener(v ->{
+            setAppTheme(GREEN);
+            recreate();
+        });
 
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        //сохраняем состояние
-        outState.putSerializable(STATE_CALCULATOR,calculator);
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleId(getCodeStyle(codeStyle));
     }
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        //возвращаем состояние
-        calculator = (Calculator) savedInstanceState.getSerializable(STATE_CALCULATOR);
-        result.setText(calculator.getResult());
-        userInput.setText(calculator.getEXP());
+    // Чтение настроек, параметр «тема»
+    private int getCodeStyle(int codeStyle){
+        // Работаем через специальный класс сохранения и чтения настроек
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        //Прочитать тему, если настройка не найдена - взять по умолчанию
+        return sharedPref.getInt(appTheme, codeStyle);
     }
 
-    /**
-     * очищает поля у текст вью
-     * и очищает стэйт у объекта калькулятора
-     */
-    private void clearState(){
-        calculator.clear();
-        userInput.setText(calculator.getResult());
-        result.setText(calculator.getEXP());
+    // Сохранение настроек
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        // Настройки сохраняются посредством специального класса editor.
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(appTheme, codeStyle);
+        editor.apply();
     }
-    @Override
-    public void onClick(View v) {
-        Button button = (Button)v;
-        String text = button.getText().toString();
-        if(text.equals(CLEAR)){
-            clearState();
-        } else {
-            calculator.add(text);
-            userInput.setText(calculator.getEXP());
-            if(text.matches(REGEX_IS_SYMBOL_OPERATION)){
-                result.setText(calculator.getResult());
-            }
+
+    private int codeStyleToStyleId(int codeStyle){
+        switch (codeStyle){
+            case BLOOD:
+                return  R.style.Theme_BloodTheme;
+            case DARKER:
+                return  R.style.Theme_DarkerTheme;
+            case GREEN:
+                return R.style.Theme_GreenTheme;
+            default:
+                return R.style.Theme_MainContainer;
         }
-
     }
 }
