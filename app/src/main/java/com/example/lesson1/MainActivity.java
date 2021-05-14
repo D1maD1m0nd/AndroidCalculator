@@ -32,12 +32,21 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
     private RadioButton greenButton;
 
     private Button sendButton;
-
+    private Calculator bufCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         int themeId = getAppTheme(R.style.Theme_MainContainer);
+
+        Intent intent = getIntent();
+
+        if(intent.getExtras() != null){
+            bufCalculator = (Calculator) intent.getExtras().getSerializable(CALCULATOR_TAG);
+            themeId = intent.getExtras().getInt(THEME_TAG);
+        }
+
         setTheme(themeId);
         setContentView(R.layout.main_activity);
         initView();
@@ -70,15 +79,20 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
         });
 
         sendButton.setOnClickListener(v ->{
-            Intent intent = new Intent(this, CalculatorActivity.class);
-            int theme = getAppTheme(R.style.Theme_MainContainer);
-            intent.putExtra(THEME_TAG, theme);
-            startActivity(intent);
+            openCalculator();
         });
 
     }
 
-
+    private void openCalculator(){
+        Intent intent = new Intent(this, CalculatorActivity.class);
+        int theme = getAppTheme(R.style.Theme_MainContainer);
+        intent.putExtra(THEME_TAG, theme);
+        if(bufCalculator != null){
+            intent.putExtra(CALCULATOR_TAG, bufCalculator);
+        }
+        startActivity(intent);
+    }
     private int getAppTheme(int codeStyle) {
         return codeStyleToStyleId(getCodeStyle(codeStyle));
     }

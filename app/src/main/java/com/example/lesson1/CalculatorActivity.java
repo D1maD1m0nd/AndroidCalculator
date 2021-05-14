@@ -1,5 +1,6 @@
 package com.example.lesson1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +17,11 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     private TextView result;
     private TextView userInput;
     private static final String STATE_CALCULATOR = "STATE_CALCULATOR";
-
+    private int themeId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        int themeId = getAppTheme();
-
+        themeId = getAppTheme();
+        calculator  = getCaluclator();
         setTheme(themeId);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_layout);
@@ -32,18 +33,38 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         //binding onClickListner on button
         initClickListenerButton();
 
-        //init calculator
-        calculator = new Calculator();
+        if(calculator == null){
+            //init calculator
+            calculator = new Calculator();
+        } else {
+            fillCalculatorData();
+        }
+
+
 
     }
     private int getAppTheme(){
-        int value = getIntent().getExtras().getInt(THEME_TAG);
-        return value;
+        return  getIntent().getExtras().getInt(THEME_TAG);
+    }
+
+    private Calculator  getCaluclator(){
+        return (Calculator) getIntent().getExtras().getSerializable(CALCULATOR_TAG);
+    }
+
+    private void fillCalculatorData(){
+        result.setText(calculator.getResult());
+        userInput.setText(calculator.getEXP());
     }
     /**
      * метод инициализации слушателей клика для кнопок
      */
     private void initClickListenerButton(){
+
+        //appTheme button
+        findViewById(R.id.buttonBack).setOnClickListener(v->{
+            sendStateCalculatorAndTheme();
+        });
+
         //values
         findViewById(R.id.buttonOne).setOnClickListener(this);
         findViewById(R.id.buttonTwo).setOnClickListener(this);
@@ -65,12 +86,20 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.Clear).setOnClickListener(this);
 
     }
+    private void sendStateCalculatorAndTheme(){
+        Intent intent = new Intent(this, MainActivity.class);
+
+        intent.putExtra(THEME_TAG, themeId);
+        intent.putExtra(CALCULATOR_TAG,calculator);
+        startActivity(intent);
+    }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         //сохраняем состояние
         outState.putSerializable(STATE_CALCULATOR,calculator);
+
     }
 
     @Override
@@ -79,8 +108,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
         //возвращаем состояние
         calculator = (Calculator) savedInstanceState.getSerializable(STATE_CALCULATOR);
-        result.setText(calculator.getResult());
-        userInput.setText(calculator.getEXP());
+        fillCalculatorData();
     }
 
     /**
