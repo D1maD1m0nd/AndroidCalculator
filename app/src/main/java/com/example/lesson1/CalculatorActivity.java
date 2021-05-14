@@ -19,7 +19,9 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_DarkerTheme);
+        int themeId = getAppTheme();
+
+        setTheme(themeId);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_layout);
 
@@ -32,12 +34,11 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
         //init calculator
         calculator = new Calculator();
-        //init theme
-        setAppTheme();
-    }
-    private void setAppTheme(){
-        int value = getIntent().getExtras().getInt(THEME_TAG);
 
+    }
+    private int getAppTheme(){
+        int value = getIntent().getExtras().getInt(THEME_TAG);
+        return value;
     }
     /**
      * метод инициализации слушателей клика для кнопок

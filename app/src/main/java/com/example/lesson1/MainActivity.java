@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
 
         sendButton.setOnClickListener(v ->{
             Intent intent = new Intent(this, CalculatorActivity.class);
-            intent.putExtra(THEME_TAG, BLOOD);
+            int theme = getAppTheme(R.style.Theme_MainContainer);
+            intent.putExtra(THEME_TAG, theme);
             startActivity(intent);
         });
 
