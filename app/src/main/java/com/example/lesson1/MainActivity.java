@@ -2,12 +2,14 @@ package com.example.lesson1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.RadioButton;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements IntentConstants{
     // Имя настроек
     private static final String NameSharedPreference = "STYLE";
 
@@ -29,11 +31,13 @@ public class MainActivity extends AppCompatActivity{
     private RadioButton darkerButton;
     private RadioButton greenButton;
 
+    private Button sendButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int themeId = getAppTheme(R.style.MainContainer);
+        int themeId = getAppTheme(R.style.Theme_MainContainer);
         setTheme(themeId);
         setContentView(R.layout.main_activity);
         initView();
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity{
         extraButton = findViewById(R.id.extraWhiteButton);
         darkerButton = findViewById(R.id.darkerThemeButton);
         greenButton = findViewById(R.id.greenThemeButton);
+        sendButton = findViewById(R.id.sendButton);
+
     }
     private void bindingOnClickButton(){
         bloodButton.setOnClickListener(v -> {
@@ -61,6 +67,12 @@ public class MainActivity extends AppCompatActivity{
         greenButton.setOnClickListener(v ->{
             setAppTheme(GREEN);
             recreate();
+        });
+
+        sendButton.setOnClickListener(v ->{
+            Intent intent = new Intent(this, CalculatorActivity.class);
+            intent.putExtra(THEME_TAG, BLOOD);
+            startActivity(intent);
         });
 
     }

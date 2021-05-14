@@ -3,8 +3,9 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    >
+    tools:context=".CalculatorActivity">
     <TextView
         android:id="@+id/textViewResult"
         style="@style/TextViewStyle"
@@ -17,11 +18,11 @@
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:layout_weight="1"
-        android:backgroundTint="#C6FF00"
         android:backgroundTintMode="src_over"
         android:orientation="horizontal">
 
@@ -146,7 +147,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
+
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton

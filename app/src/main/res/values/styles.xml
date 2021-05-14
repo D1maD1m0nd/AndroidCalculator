@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Размеры для кнопок -->
-    <style name="DimenButtonGroup">
+    <style name="DimenButtonGroup"   parent="Theme.MaterialComponents">
         <item name="android:layout_margin">@dimen/layout_margin</item>
         <item name="android:gravity">center</item>
         <!--Это необходимо, что бы вбрать отступы между кнопками-->
@@ -13,7 +13,7 @@
 
 
     <!-- Стиль цвета, текста для кнопок, используется в  стилях для светлой темы -->
-    <style name="ButtonStyleLight"   parent="Theme.AppCompat">
+    <style name="ButtonStyleLight"   parent="Theme.MaterialComponents">
         <!-- Customize your theme here. -->
         <item name="android:backgroundTint">@color/grey_ab7</item>
         <item name="android:fontFamily">@font/alfa_slab_one</item>
@@ -46,7 +46,7 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="TextViewStyle" parent="Theme.MaterialComponents.DayNight">
+    <style name="TextViewStyle" parent="Theme.MaterialComponents">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/layout_margin</item>

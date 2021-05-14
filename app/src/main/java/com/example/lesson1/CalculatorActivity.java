@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import static com.example.lesson1.CalculatorConstants.CLEAR;
 import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
 
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener{
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, IntentConstants{
     private Calculator calculator;
     private TextView result;
     private TextView userInput;
@@ -19,6 +19,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_DarkerTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_layout);
 
@@ -31,8 +32,13 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
         //init calculator
         calculator = new Calculator();
+        //init theme
+        setAppTheme();
     }
+    private void setAppTheme(){
+        int value = getIntent().getExtras().getInt(THEME_TAG);
 
+    }
     /**
      * метод инициализации слушателей клика для кнопок
      */
