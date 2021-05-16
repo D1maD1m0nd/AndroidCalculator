@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Размеры для кнопок -->
-    <style name="DimenButtonGroup"   parent="Theme.MaterialComponents">
+    <style name="DimenButtonGroup" parent="Theme.MaterialComponents">
         <item name="android:layout_margin">@dimen/layout_margin</item>
         <item name="android:gravity">center</item>
         <!--Это необходимо, что бы вбрать отступы между кнопками-->
@@ -13,7 +13,7 @@
 
 
     <!-- Стиль цвета, текста для кнопок, используется в  стилях для светлой темы -->
-    <style name="ButtonStyleLight"   parent="Theme.MaterialComponents">
+    <style name="ButtonStyleLight" parent="Theme.MaterialComponents">
         <!-- Customize your theme here. -->
         <item name="android:backgroundTint">@color/grey_ab7</item>
         <item name="android:fontFamily">@font/alfa_slab_one</item>
@@ -23,7 +23,7 @@
 
 
     <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
-    <style name="ButtonStyleNight"   parent="Theme.MaterialComponents">
+    <style name="ButtonStyleNight" parent="Theme.MaterialComponents">
         <item name="android:backgroundTint">@color/button_night</item>
         <item name="android:fontFamily">@font/alfa_slab_one</item>
         <item name="android:textColor">@color/text_color</item>
@@ -31,14 +31,14 @@
     </style>
 
     <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
-    <style name="ButtonStyleBlood"   parent="Theme.MaterialComponents">
+    <style name="ButtonStyleBlood" parent="Theme.MaterialComponents">
         <item name="android:backgroundTint">@color/blood</item>
         <item name="android:fontFamily">@font/alfa_slab_one</item>
         <item name="android:textColor">@color/text_color</item>
     </style>
 
     <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
-    <style name="ButtonStyleGreen"   parent="Theme.MaterialComponents">
+    <style name="ButtonStyleGreen" parent="Theme.MaterialComponents">
         <item name="android:backgroundTint">@color/green</item>
         <item name="android:fontFamily">@font/alfa_slab_one</item>
         <item name="android:textColor">@color/text_color</item>

@@ -1,21 +1,20 @@
 package com.example.lesson1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements IntentConstants{
+
+public class MainActivity extends AppCompatActivity implements IntentConstants {
     // Имя настроек
     private static final String NameSharedPreference = "STYLE";
 
     // Имя параметра в настройках
     private static final String appTheme = "APP_THEME";
-
 
 
     private static final int BLOOD = 0;
@@ -24,9 +23,7 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
     private static final int GREEN = 3;
 
 
-
-
-    private RadioButton bloodButton ;
+    private RadioButton bloodButton;
     private RadioButton extraButton;
     private RadioButton darkerButton;
     private RadioButton greenButton;
@@ -42,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
 
         Intent intent = getIntent();
 
-        if(intent.getExtras() != null){
+        if (intent.getExtras() != null) {
             bufCalculator = (Calculator) intent.getExtras().getSerializable(CALCULATOR_TAG);
             themeId = intent.getExtras().getInt(THEME_TAG);
         }
@@ -52,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
         initView();
         bindingOnClickButton();
     }
-    private void initView(){
+
+    private void initView() {
         bloodButton = findViewById(R.id.bloodThemeButton);
         extraButton = findViewById(R.id.extraWhiteButton);
         darkerButton = findViewById(R.id.darkerThemeButton);
@@ -60,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
         sendButton = findViewById(R.id.sendButton);
 
     }
-    private void bindingOnClickButton(){
+
+    private void bindingOnClickButton() {
         bloodButton.setOnClickListener(v -> {
             setAppTheme(BLOOD);
             recreate();
@@ -68,37 +67,38 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
         extraButton.setOnClickListener(v -> {
             setAppTheme(EXTRA_WHITE);
             recreate();
-        } );
+        });
         darkerButton.setOnClickListener(v -> {
             setAppTheme(DARKER);
             recreate();
         });
-        greenButton.setOnClickListener(v ->{
+        greenButton.setOnClickListener(v -> {
             setAppTheme(GREEN);
             recreate();
         });
 
-        sendButton.setOnClickListener(v ->{
+        sendButton.setOnClickListener(v -> {
             openCalculator();
         });
 
     }
 
-    private void openCalculator(){
+    private void openCalculator() {
         Intent intent = new Intent(this, CalculatorActivity.class);
         int theme = getAppTheme(R.style.Theme_MainContainer);
         intent.putExtra(THEME_TAG, theme);
-        if(bufCalculator != null){
+        if (bufCalculator != null) {
             intent.putExtra(CALCULATOR_TAG, bufCalculator);
         }
         startActivity(intent);
     }
+
     private int getAppTheme(int codeStyle) {
         return codeStyleToStyleId(getCodeStyle(codeStyle));
     }
 
     // Чтение настроек, параметр «тема»
-    private int getCodeStyle(int codeStyle){
+    private int getCodeStyle(int codeStyle) {
         // Работаем через специальный класс сохранения и чтения настроек
         SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
         //Прочитать тему, если настройка не найдена - взять по умолчанию
@@ -114,12 +114,12 @@ public class MainActivity extends AppCompatActivity implements IntentConstants{
         editor.apply();
     }
 
-    private int codeStyleToStyleId(int codeStyle){
-        switch (codeStyle){
+    private int codeStyleToStyleId(int codeStyle) {
+        switch (codeStyle) {
             case BLOOD:
-                return  R.style.Theme_BloodTheme;
+                return R.style.Theme_BloodTheme;
             case DARKER:
-                return  R.style.Theme_DarkerTheme;
+                return R.style.Theme_DarkerTheme;
             case GREEN:
                 return R.style.Theme_GreenTheme;
             default:

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Theme.GreenTheme" parent="Theme.MaterialComponents">
         <item name="android:background">@color/blue_d3</item>

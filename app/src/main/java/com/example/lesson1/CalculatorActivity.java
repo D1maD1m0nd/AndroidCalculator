@@ -12,16 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import static com.example.lesson1.CalculatorConstants.CLEAR;
 import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
 
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, IntentConstants{
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, IntentConstants {
+    private static final String STATE_CALCULATOR = "STATE_CALCULATOR";
     private Calculator calculator;
     private TextView result;
     private TextView userInput;
-    private static final String STATE_CALCULATOR = "STATE_CALCULATOR";
     private int themeId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         themeId = getAppTheme();
-        calculator  = getCaluclator();
+        calculator = getCaluclator();
         setTheme(themeId);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_layout);
@@ -33,7 +34,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         //binding onClickListner on button
         initClickListenerButton();
 
-        if(calculator == null){
+        if (calculator == null) {
             //init calculator
             calculator = new Calculator();
         } else {
@@ -41,27 +42,28 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         }
 
 
-
-    }
-    private int getAppTheme(){
-        return  getIntent().getExtras().getInt(THEME_TAG);
     }
 
-    private Calculator  getCaluclator(){
+    private int getAppTheme() {
+        return getIntent().getExtras().getInt(THEME_TAG);
+    }
+
+    private Calculator getCaluclator() {
         return (Calculator) getIntent().getExtras().getSerializable(CALCULATOR_TAG);
     }
 
-    private void fillCalculatorData(){
+    private void fillCalculatorData() {
         result.setText(calculator.getResult());
         userInput.setText(calculator.getEXP());
     }
+
     /**
      * метод инициализации слушателей клика для кнопок
      */
-    private void initClickListenerButton(){
+    private void initClickListenerButton() {
 
         //appTheme button
-        findViewById(R.id.buttonBack).setOnClickListener(v->{
+        findViewById(R.id.buttonBack).setOnClickListener(v -> {
             sendStateCalculatorAndTheme();
         });
 
@@ -86,11 +88,12 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         findViewById(R.id.Clear).setOnClickListener(this);
 
     }
-    private void sendStateCalculatorAndTheme(){
+
+    private void sendStateCalculatorAndTheme() {
         Intent intent = new Intent(this, MainActivity.class);
 
         intent.putExtra(THEME_TAG, themeId);
-        intent.putExtra(CALCULATOR_TAG,calculator);
+        intent.putExtra(CALCULATOR_TAG, calculator);
         startActivity(intent);
     }
 
@@ -98,7 +101,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         //сохраняем состояние
-        outState.putSerializable(STATE_CALCULATOR,calculator);
+        outState.putSerializable(STATE_CALCULATOR, calculator);
 
     }
 
@@ -115,21 +118,22 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
      * очищает поля у текст вью
      * и очищает стэйт у объекта калькулятора
      */
-    private void clearState(){
+    private void clearState() {
         calculator.clear();
         userInput.setText(calculator.getResult());
         result.setText(calculator.getEXP());
     }
+
     @Override
     public void onClick(View v) {
-        Button button = (Button)v;
+        Button button = (Button) v;
         String text = button.getText().toString();
-        if(text.equals(CLEAR)){
+        if (text.equals(CLEAR)) {
             clearState();
         } else {
             calculator.add(text);
             userInput.setText(calculator.getEXP());
-            if(text.matches(REGEX_IS_SYMBOL_OPERATION)){
+            if (text.matches(REGEX_IS_SYMBOL_OPERATION)) {
                 result.setText(calculator.getResult());
             }
         }
