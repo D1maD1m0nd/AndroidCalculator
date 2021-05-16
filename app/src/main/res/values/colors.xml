@@ -16,6 +16,7 @@
     <color name="button_night">#99000000</color>
     <color name="blood">#F50000</color>
     <color name="green">#9969F14A</color>
+    <color name="light_green">#A1E533</color>
     <color name="blue_d3">#96D3DA</color>
     <color name="red_b5">#DEB5B5</color>
 </resources>

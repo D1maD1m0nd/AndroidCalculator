@@ -41,8 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/extra_light"
-            android:textColor="@color/blood"
-            android:textSize="20sp" />
+            android:textColor="@color/grey_ab7"
+            android:textSize="@dimen/radio_button_text_size" />
 
         <RadioButton
             android:id="@+id/bloodThemeButton"
@@ -68,22 +68,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sendButton"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:backgroundTint="#B7FFFFFF"
         android:fontFamily="@font/alfa_slab_one"
-        android:hapticFeedbackEnabled="false"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
+        android:padding="@dimen/padding_theme_button"
         android:text="@string/continue_button"
-        android:textColor="#3D5AFE"
-        android:textSize="20sp"
+        android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

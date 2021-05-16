@@ -9,18 +9,26 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonBack"
+        style="@style/DimenButtonGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/back_button" />
 
     <TextView
         android:id="@+id/textViewResult"
         style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/result" />
 
     <TextView
         android:id="@+id/textViewInput"
         style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/user_input_label" />
 
 

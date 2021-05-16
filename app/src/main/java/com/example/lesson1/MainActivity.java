@@ -38,13 +38,14 @@ public class MainActivity extends AppCompatActivity implements IntentConstants {
         int themeId = getAppTheme(R.style.Theme_MainContainer);
 
         Intent intent = getIntent();
-
-        if (intent.getExtras() != null) {
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
             bufCalculator = (Calculator) intent.getExtras().getSerializable(CALCULATOR_TAG);
-            themeId = intent.getExtras().getInt(THEME_TAG);
-            //TODO очищаем данные, что бы выбрать тему для текущего экрана. Егор, подскажи способ получше )
-            intent.removeExtra(THEME_TAG);
-            intent.removeExtra(CALCULATOR_TAG);
+            if (bundle.getInt(THEME_TAG) != 0) {
+                themeId = intent.getExtras().getInt(THEME_TAG);
+                intent.removeExtra(THEME_TAG);
+            }
+
         }
 
         setTheme(themeId);

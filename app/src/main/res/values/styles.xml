@@ -47,10 +47,7 @@
 
     <!-- Base application theme. -->
     <style name="TextViewStyle" parent="Theme.MaterialComponents">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/layout_margin</item>
-        <item name="android:layout_weight">1</item>
         <item name="android:background">@drawable/back</item>
         <item name="android:paddingEnd">@dimen/padding_start_text_view</item>
         <item name="android:paddingStart">@dimen/padding_start_text_view</item>
