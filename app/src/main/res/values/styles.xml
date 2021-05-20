@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Размеры для кнопок -->
+    <style name="DimenButtonGroup" parent="Theme.MaterialComponents">
+        <item name="android:layout_margin">@dimen/layout_margin</item>
+        <item name="android:gravity">center</item>
+        <!--Это необходимо, что бы вбрать отступы между кнопками-->
+        <item name="android:insetTop">@dimen/inset_none</item>
+        <item name="android:insetBottom">@dimen/inset_none</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+    </style>
+
+
+    <!-- Стиль цвета, текста для кнопок, используется в  стилях для светлой темы -->
+    <style name="ButtonStyleLight" parent="Theme.MaterialComponents">
+        <!-- Customize your theme here. -->
+        <item name="android:backgroundTint">@color/grey_ab7</item>
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textColor">@color/text_color</item>
+
+    </style>
+
+
+    <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
+    <style name="ButtonStyleNight" parent="Theme.MaterialComponents">
+        <item name="android:backgroundTint">@color/button_night</item>
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+    </style>
+
+    <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
+    <style name="ButtonStyleBlood" parent="Theme.MaterialComponents">
+        <item name="android:backgroundTint">@color/blood</item>
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <!-- Стиль цвета, текста для кнопок, используется в  стилях для темной темы -->
+    <style name="ButtonStyleGreen" parent="Theme.MaterialComponents">
+        <item name="android:backgroundTint">@color/green</item>
+        <item name="android:fontFamily">@font/alfa_slab_one</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="TextViewStyle" parent="Theme.MaterialComponents">
+        <item name="android:layout_margin">@dimen/layout_margin</item>
+        <item name="android:background">@drawable/back</item>
+        <item name="android:paddingEnd">@dimen/padding_start_text_view</item>
+        <item name="android:paddingStart">@dimen/padding_start_text_view</item>
+        <item name="android:textColor">@color/red_0057</item>
+        <item name="android:textSize">@dimen/text_size_text_view</item>
+    </style>
+
+</resources>
