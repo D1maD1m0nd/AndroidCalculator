@@ -9,8 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lesson1.model.Calculator;
+import com.example.lesson1.MainActivity;
 import com.example.lesson1.R;
+import com.example.lesson1.model.Calculator;
 
 import static com.example.lesson1.model.CalculatorConstants.CLEAR;
 import static com.example.lesson1.model.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;

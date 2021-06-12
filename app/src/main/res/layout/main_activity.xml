@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
 
 
-    tools:context=".ui.MainActivity">
+    tools:context=".MainActivity">
 
     <RadioGroup
         android:id="@+id/radioGroup"
