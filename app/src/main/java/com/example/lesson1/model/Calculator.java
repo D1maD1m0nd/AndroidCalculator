@@ -1,17 +1,17 @@
-package com.example.lesson1;
+package com.example.lesson1.model;
 
 import java.io.Serializable;
 import java.util.Locale;
 
-import static com.example.lesson1.CalculatorConstants.DIVIDE;
-import static com.example.lesson1.CalculatorConstants.DIVIDE_ZERO;
-import static com.example.lesson1.CalculatorConstants.EQUAL;
-import static com.example.lesson1.CalculatorConstants.INPUT_NUMBER;
-import static com.example.lesson1.CalculatorConstants.MINUS;
-import static com.example.lesson1.CalculatorConstants.MULTIPLY;
-import static com.example.lesson1.CalculatorConstants.PLUS;
-import static com.example.lesson1.CalculatorConstants.REGEX_IS_NUMBER;
-import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
+import static com.example.lesson1.model.CalculatorConstants.DIVIDE;
+import static com.example.lesson1.model.CalculatorConstants.DIVIDE_ZERO;
+import static com.example.lesson1.model.CalculatorConstants.EQUAL;
+import static com.example.lesson1.model.CalculatorConstants.INPUT_NUMBER;
+import static com.example.lesson1.model.CalculatorConstants.MINUS;
+import static com.example.lesson1.model.CalculatorConstants.MULTIPLY;
+import static com.example.lesson1.model.CalculatorConstants.PLUS;
+import static com.example.lesson1.model.CalculatorConstants.REGEX_IS_NUMBER;
+import static com.example.lesson1.model.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
 
 public class Calculator implements ICalculator, Serializable {
     private StringBuilder EXP;

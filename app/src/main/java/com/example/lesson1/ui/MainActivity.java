@@ -1,4 +1,4 @@
-package com.example.lesson1;
+package com.example.lesson1.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lesson1.model.kotlin.Calculator;
+import com.example.lesson1.R;
 
 
 public class MainActivity extends AppCompatActivity implements IntentConstants {

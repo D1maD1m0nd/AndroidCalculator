@@ -1,4 +1,4 @@
-package com.example.lesson1;
+package com.example.lesson1.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.lesson1.CalculatorConstants.CLEAR;
-import static com.example.lesson1.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
+import com.example.lesson1.model.Calculator;
+import com.example.lesson1.R;
+
+import static com.example.lesson1.model.CalculatorConstants.CLEAR;
+import static com.example.lesson1.model.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener, IntentConstants {
     private static final String STATE_CALCULATOR = "STATE_CALCULATOR";
