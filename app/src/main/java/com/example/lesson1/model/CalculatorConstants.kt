@@ -23,4 +23,6 @@ object CalculatorConstants {
     const val EQUAL = "="
 
     const val CLEAR = "c"
+    const val THEME_TAG = "THEME"
+    const val CALCULATOR_TAG = "CALCULATOR"
 }
