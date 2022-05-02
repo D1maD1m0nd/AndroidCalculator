@@ -13,7 +13,7 @@ import com.example.lesson1.model.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION
 import java.io.Serializable
 import java.util.regex.Pattern
 
-class Calculator : ICalculator, Serializable {
+class Calculator : ICalculator, Serializable, IOperation {
     private var EXP: StringBuilder
     private lateinit var result: String
     private lateinit var operation: String
@@ -46,7 +46,6 @@ class Calculator : ICalculator, Serializable {
         }
         if (symbol != EQUAL) {
             EXP.append(symbol)
-
         }
     }
 
