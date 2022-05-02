@@ -53,22 +53,35 @@ class Calculator : ICalculator, Serializable, IOperation {
         return result
     }
 
-    override fun minus(operand: Double, operand1: Double): Double {
+    override fun minus(operand: Double?, operand1: Double?): Double? {
+        if(operand1 == null || operand == null) {
+            return null
+        }
         return operand - operand1
     }
 
-    override fun plus(operand: Double, operand1: Double): Double {
+    override fun plus(operand: Double?, operand1: Double?): Double? {
+        if(operand1 == null || operand == null) {
+            return null
+        }
         return operand + operand1
     }
 
-    override fun divide(operand: Double, operand1: Double): Double {
+    override fun divide(operand: Double?, operand1: Double?): Double? {
+        if(operand1 == null || operand == null) {
+            return null
+        }
+
         if (operand1 < 0.0000000000000001) {
             return -1.0
         }
         return operand / operand1
     }
 
-    override fun multiply(operand: Double, operand1: Double): Double {
+    override fun multiply(operand: Double?, operand1: Double?): Double? {
+        if(operand1 == null || operand == null) {
+            return null
+        }
         return operand * operand1
     }
 
