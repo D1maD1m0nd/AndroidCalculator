@@ -13,16 +13,17 @@ import com.example.lesson1.model.CalculatorConstants.CALCULATOR_TAG
 import com.example.lesson1.model.CalculatorConstants.CLEAR
 import com.example.lesson1.model.CalculatorConstants.REGEX_IS_SYMBOL_OPERATION
 import com.example.lesson1.model.CalculatorConstants.THEME_TAG
+import com.example.lesson1.presenter.presenter.Contract
+import com.example.lesson1.presenter.presenter.PresenterImpl
 import java.util.regex.Pattern
 
-class CalculatorActivity : AppCompatActivity(), View.OnClickListener{
-    private var calculator: Calculator? = null
+class CalculatorActivity : AppCompatActivity(), View.OnClickListener, Contract.View{
     private var result: TextView? = null
     private var userInput: TextView? = null
     private var themeId = 0
+    private var presenter : Contract.Presenter = PresenterImpl()
     override fun onCreate(savedInstanceState: Bundle?) {
         themeId = appTheme
-        calculator = caluclator
         setTheme(themeId)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calculator_layout)
@@ -30,26 +31,12 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener{
         //init TextView
         result = findViewById(R.id.textViewResult)
         userInput = findViewById(R.id.textViewInput)
-
-        //binding onClickListner on button
         initClickListenerButton()
-        if (calculator == null) {
-            //init calculator
-            calculator = Calculator()
-        } else {
-            fillCalculatorData()
-        }
+        presenter.attach(this)
     }
 
     private val appTheme: Int
         get() = intent.extras!!.getInt(THEME_TAG)
-    private val caluclator: Calculator?
-        private get() = intent.extras!!.getSerializable(CALCULATOR_TAG) as Calculator?
-
-    private fun fillCalculatorData() {
-        result!!.text = calculator!!.getResult()
-        userInput!!.text = calculator!!.getEXP()
-    }
 
     /**
      * метод инициализации слушателей клика для кнопок
@@ -83,22 +70,22 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener{
     private fun sendStateCalculatorAndTheme() {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(THEME_TAG, themeId)
-        intent.putExtra(CALCULATOR_TAG, calculator)
         startActivity(intent)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         //сохраняем состояние
-        outState.putSerializable(STATE_CALCULATOR, calculator)
+        outState.putSerializable(STATE_PRESENTER, presenter)
+        presenter.detach()
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-
-        //возвращаем состояние
-        calculator = savedInstanceState.getSerializable(STATE_CALCULATOR) as Calculator?
-        fillCalculatorData()
+        savedInstanceState.getSerializable(STATE_PRESENTER)?.let {
+            presenter = it as Contract.Presenter
+            presenter.attach(this)
+        }
     }
 
     /**
@@ -106,9 +93,9 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener{
      * и очищает стэйт у объекта калькулятора
      */
     private fun clearState() {
-        calculator!!.clear()
-        userInput!!.text = calculator!!.getResult()
-        result!!.text = calculator!!.getEXP()
+        presenter.clear()
+        userInput?.text = null
+        result?.text = null
     }
 
     override fun onClick(v: View) {
@@ -117,15 +104,26 @@ class CalculatorActivity : AppCompatActivity(), View.OnClickListener{
         if (text == CLEAR) {
             clearState()
         } else {
-            calculator!!.add(text)
-            userInput!!.text = calculator!!.getEXP()
-            if (Pattern.matches(REGEX_IS_SYMBOL_OPERATION, text)) {
-                result!!.text = calculator!!.getResult()
-            }
+            presenter.calculate(text)
+            presenter.getExp()
         }
     }
 
-    companion object {
-        private const val STATE_CALCULATOR = "STATE_CALCULATOR"
+    override fun setResult(result: String) {
+            this.result?.text = result
     }
+
+    override fun updateExp(result: String) {
+        userInput?.text = result
+    }
+
+    override fun setError(error: Throwable) {
+
+    }
+
+
+    companion object {
+        private const val STATE_PRESENTER = "STATE_PRESENTER"
+    }
+
 }

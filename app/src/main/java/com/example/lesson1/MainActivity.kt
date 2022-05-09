@@ -2,6 +2,7 @@ package com.example.lesson1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
@@ -18,15 +19,13 @@ class MainActivity : AppCompatActivity() {
     private var darkerButton: RadioButton? = null
     private var greenButton: RadioButton? = null
     private var sendButton: Button? = null
-    private var bufCalculator: Calculator? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var themeId = getAppTheme(R.style.Theme_MainContainer)
         val intent = intent
         val bundle = intent.extras
         if (bundle != null) {
-            bufCalculator =
-                intent.extras!!.getSerializable(CALCULATOR_TAG) as Calculator?
             if (bundle.getInt(THEME_TAG) != 0) {
                 themeId = intent.extras!!.getInt(THEME_TAG)
                 intent.removeExtra(THEME_TAG)
@@ -38,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         bindingOnClickButton()
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d("On start", "onstart")
+    }
     private fun initView() {
         bloodButton = findViewById(R.id.bloodThemeButton)
         extraButton = findViewById(R.id.extraWhiteButton)
@@ -47,32 +50,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindingOnClickButton() {
-        bloodButton!!.setOnClickListener { v: View? ->
+        bloodButton!!.setOnClickListener {
             setAppTheme(BLOOD)
             recreate()
         }
-        extraButton!!.setOnClickListener { v: View? ->
+        extraButton!!.setOnClickListener {
             setAppTheme(EXTRA_WHITE)
             recreate()
         }
-        darkerButton!!.setOnClickListener { v: View? ->
+        darkerButton!!.setOnClickListener {
             setAppTheme(DARKER)
             recreate()
         }
-        greenButton!!.setOnClickListener { v: View? ->
+        greenButton!!.setOnClickListener {
             setAppTheme(GREEN)
             recreate()
         }
-        sendButton!!.setOnClickListener { v: View? -> openCalculator() }
+        sendButton!!.setOnClickListener {  openCalculator() }
     }
 
     private fun openCalculator() {
         val intent = Intent(this, CalculatorActivity::class.java)
         val theme = getAppTheme(R.style.Theme_MainContainer)
         intent.putExtra(THEME_TAG, theme)
-        if (bufCalculator != null) {
-            intent.putExtra(CALCULATOR_TAG, bufCalculator)
-        }
         startActivity(intent)
     }
 
