@@ -7,7 +7,7 @@ import com.example.lesson1.presenter.repository.RepositoryImpl
 import java.io.Serializable
 import java.util.regex.Pattern
 
-class PresenterImpl(private val interactor: Interactor = InteractorImpl(RepositoryImpl())) : Contract.Presenter, Serializable {
+class PresenterImpl(private val interactor: Interactor = InteractorImpl()) : Contract.Presenter, Serializable {
     private var view : Contract.View? = null
     override fun attach(v: Contract.View) {
         view = v
@@ -20,7 +20,6 @@ class PresenterImpl(private val interactor: Interactor = InteractorImpl(Reposito
         if(isSuccess) {
             view?.setResult(result)
         }
-
     }
 
     override fun clear() {

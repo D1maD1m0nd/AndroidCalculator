@@ -3,10 +3,10 @@ package com.example.lesson1.presenter.Interactor
 import com.example.lesson1.model.Calculator
 import com.example.lesson1.model.CalculatorConstants
 import com.example.lesson1.presenter.repository.Repository
+import com.example.lesson1.presenter.repository.RepositoryImpl
 import java.util.regex.Pattern
 
-class InteractorImpl(private val repository: Repository) : Interactor {
-
+class InteractorImpl(private var repository: Repository = RepositoryImpl()) : Interactor {
 
     override fun calculate(symbol: String) : String{
         var isSymbol: Boolean = Pattern.matches(CalculatorConstants.REGEX_IS_SYMBOL_OPERATION, symbol)
